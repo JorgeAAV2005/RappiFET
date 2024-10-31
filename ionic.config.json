@@ -1,0 +1,7 @@
+{
+  "name": "RappiFET",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
