@@ -1,0 +1,37 @@
+.login-content {
+    --background: linear-gradient(135deg, #fff, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-wrapper {
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .login-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  ion-card-title {
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .input-item {
+    --background: #000000;
+    --border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  .login-button {
+    --background: #00aaff;
+    --border-radius: 20px;
+    margin-top: 20px;
+    color: #fff;
+    font-weight: bold;
+  }

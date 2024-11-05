@@ -7,12 +7,12 @@
 <ion-content class="ion-padding">
   <form (ngSubmit)="register()">
     <ion-item>
-      <ion-label position="floating">prueba33333</ion-label>
+      <ion-label position="floating">Nombre</ion-label>
       <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Usuariooooooooooooooooooooooooooooooooooooooooooooooooooooooawdawdwadwadawdawdawdwadawd</ion-label>
+      <ion-label position="floating">Usuario</ion-label>
       <ion-input type="text" [(ngModel)]="usuario" name="usuario" required></ion-input>
     </ion-item>
 
@@ -27,5 +27,6 @@
     </ion-item>
 
     <ion-button expand="block" type="submit">Registrarse</ion-button>
+    <ion-button expand="block" type="button" (click)="goToLogin()">Iniciar sesión</ion-button>
   </form>
 </ion-content>

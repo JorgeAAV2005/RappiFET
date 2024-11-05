@@ -1,13 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Loginaaaaaaaaaaaaaaaaaaaaaaa</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">PLATAPOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="login-content">
+  <div class="login-wrapper">
+    <ion-card class="login-card">
+      <ion-card-header>
+        <ion-card-title>Iniciar sesión</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item class="input-item">
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario" name="usuario"></ion-input>
+        </ion-item>
+        <ion-item class="input-item">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="contrasena" name="contrasena"></ion-input>
+        </ion-item>
+        <ion-button expand="block" class="login-button" (click)="login()">Ingresar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
