@@ -1,5 +1,8 @@
 ion-content {
-  --background: url('ruta_del_fondo.jpg') no-repeat center center/cover;
+  --background: url('/../../assets/fondo1.jpg') no-repeat center center/cover;
+  background-color: white;
+
+  
 }
 
 #container {
@@ -25,7 +28,7 @@ ion-content {
 }
 
 .logo {
-  width: 150px;
+  width: 200px;
   height: auto;
   margin-bottom: 20px;
 }

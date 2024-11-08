@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'registro',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -16,9 +16,19 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'productos',
+    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+  },
+  {
+    path: 'crearsala',
+    loadChildren: () => import('./crearsala/crearsala.module').then( m => m.CrearsalaPageModule)
+  },  {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
+
+
+
 ];
 
 @NgModule({

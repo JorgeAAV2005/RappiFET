@@ -37,7 +37,7 @@ export class LoginPage implements OnInit {
                 color: 'success'
               });
               toast.present();
-              this.navCtrl.navigateRoot('/home');
+              this.navCtrl.navigateRoot('/productos');
             } else {
               // Error de autenticación
               const toast = await this.toastController.create({

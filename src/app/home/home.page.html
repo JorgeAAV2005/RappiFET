@@ -1,24 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Blank</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
     <h2 class="header-text">Inicia sesión</h2>
     
     <h1 class="logo-text">RAPPIFET</h1>
-    <img src="ruta_del_logo.png" alt="Logo de RAPPIFET" class="logo">
+    <img src="/assets/fondo.png" alt="Logo de RAPPIFET" class="logo">
     
-    <ion-button expand="full" class="main-button">Ingresar</ion-button>
+    <!-- Botón para ingresar -->
+    <ion-button expand="full" class="main-button" (click)="goToLogin()">Ingresar</ion-button>
     
-    <p class="register-text">¿No tienes cuenta? <a href="#">Regístrate</a></p>
+    <!-- Texto para registrarse -->
+    <p class="register-text">
+      ¿No tienes cuenta? 
+      <a href="/registro" (click)="goToRegister()">Regístrate</a>
+    </p>
   </div>
+  
+  <div class="fondo-container"></div>
 </ion-content>
