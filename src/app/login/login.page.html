@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start" class="back">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>Iniciar Sesión</ion-title>
@@ -9,7 +9,6 @@
 
 <ion-content class="content" [fullscreen]="true">
   <!-- Imagen de fondo -->
-  <img src="assets/fondo1.png" class="background-img" alt="Fondo" />
 
   <!-- Imagen adicional sobre el fondo -->
   <div class="image-container">
@@ -18,7 +17,7 @@
 
   <!-- Contenedor del formulario de login -->
   <div class="login-form">
-    <h1>Login</h1>
+    <h1>Ingresa tus datos</h1>
 
     <div class="input-group">
       <label for="email">Usuario</label>
@@ -28,12 +27,12 @@
     </div>
 
     <div class="input-group">
-      <label for="password">contraseña</label>
+      <label for="password">Contraseña</label>
       <ion-item>
         <ion-input id="password" type="password" [(ngModel)]="contrasena" name="password"></ion-input>
       </ion-item>
     </div>
 
-    <ion-button expand="block" shape="round" class="login-button" (click)="login()">Log in</ion-button>
+    <ion-button expand="block" shape="round" class="login-button" (click)="login()">Ingresar</ion-button>
   </div>
 </ion-content>

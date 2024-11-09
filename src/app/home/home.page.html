@@ -1,19 +1,17 @@
 <ion-content [fullscreen]="true">
   <div id="container">
-    <h2 class="header-text">Inicia sesión</h2>
-    
-    <h1 class="logo-text">RAPPIFET</h1>
-    <img src="/assets/fondo.png" alt="Logo de RAPPIFET" class="logo">
-    
-    <!-- Botón para ingresar -->
-    <ion-button expand="full" class="main-button" (click)="goToLogin()">Ingresar</ion-button>
-    
-    <!-- Texto para registrarse -->
-    <p class="register-text">
-      ¿No tienes cuenta? 
-      <a href="/registro" (click)="goToRegister()">Regístrate</a>
-    </p>
+    <header class="header-image">
+      <img src="/assets/fondo.png" alt="Logo de la aplicación" />
+    </header>
+    <div class="content-box">
+    <strong>
+      <h2 class="header-text">Inicia Sesión</h2>
+    </strong>
+      <ion-button  class="main-button" (click)="goToLogin()">Ingresar</ion-button>
+      <p class="register-text">
+        ¿No tienes cuenta? 
+        <a href="/registro" (click)="goToRegister()">Regístrate</a>
+      </p>
+    </div>
   </div>
-  
-  <div class="fondo-container"></div>
 </ion-content>
