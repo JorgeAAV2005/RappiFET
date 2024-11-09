@@ -1,32 +1,49 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start" class="back">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <form (ngSubmit)="register()">
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>
-    </ion-item>
+  <div class="image-container">
+    <img src="assets/fondo.png" alt="LOGO">
+  </div>
+  <div class="login-form">
+    <h1>Registro</h1>
+    <form (ngSubmit)="register()">
+      <div class="input-group">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>
+        </ion-item>
+      </div>
 
-    <ion-item>
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario" name="usuario" required></ion-input>
-    </ion-item>
+      <div class="input-group">
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario" name="usuario" required></ion-input>
+        </ion-item>
+      </div>
 
-    <ion-item>
-      <ion-label position="floating">Correo electrónico</ion-label>
-      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
-    </ion-item>
+      <div class="input-group">
+        <ion-item>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+        </ion-item>
+      </div>
 
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required></ion-input>
-    </ion-item>
+      <div class="input-group">
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required></ion-input>
+        </ion-item>
+      </div>
 
-    <ion-button expand="block" type="submit">Registrarse</ion-button>
-    <ion-button expand="block" type="button" (click)="goToLogin()">Iniciar sesión</ion-button>
-  </form>
+      <ion-button expand="block" type="submit" class="login-button">Registrarse</ion-button>
+      <ion-button expand="block" type="button" (click)="goToLogin()" class="login-button">Iniciar sesión</ion-button>
+    </form>
+  </div>
 </ion-content>
