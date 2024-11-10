@@ -1,16 +1,23 @@
 <div class="home-container">
   <!-- Banner principal con título y botón CTA -->
   <section class="banner">
-    <div class="banner-content">
-      <h1>Bienvenido a RappiFET</h1>
-      <p>Encuentra lo mejor para ti con  productos exclusivos.</p>
-      <button class="cta-button" (click)="scrollToFeatured()">Explorar Productos</button>
-    </div>
+    <header class="header-image">
+      <a href="/home">
+        <img src="/assets/fondo.png" alt="Logo de la aplicación"/>
+      </a>
+    </header>
+    <ion-icon name="restaurant-outline" size="large" color="primary"></ion-icon>
+    <a href="/productos">Productos</a>
+    <ion-icon name="cart-outline" size="large" color="primary"></ion-icon>
+    <a href="/carrito">Carrito</a>
+    <ion-icon name="person-outline" size="large" color="primary"></ion-icon>
+    <h3>persona</h3>
+
   </section>
 
   <!-- Sección de productos destacados -->
   <section id="featured-products" class="featured-products">
-    <h2>Tus productos favoritos</h2>
+    <h2>¿Qué se te antoja hoy?</h2>
     <div class="products-grid">
       <div class="product-card" *ngFor="let producto of productosDestacados">
         <img [src]="producto.imagen" alt="Producto Destacado" />
@@ -23,8 +30,3 @@
     </div>
   </section>
 </div>
-  
-  
-  
-  
-  
