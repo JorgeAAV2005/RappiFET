@@ -4,14 +4,14 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  background: linear-gradient(to bottom, #ffffff, #85dfbd);
+  background: linear-gradient(to bottom, #ffffff, #39eaa6);
 }
 
 .header-image img {
   position: relative;
   top: -100px;
-  width: 150px; /* Ajusta el tamaño del logo */
-  height: 150px; /* Ajusta el tamaño del logo */
+  width: 200px; /* Ajusta el tamaño del logo */
+  height: 200px; /* Ajusta el tamaño del logo */
   object-fit: cover; /* Asegura que la imagen mantenga su aspecto */
   border-radius: 50%; /* Esto hace que el logo sea redondo */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
