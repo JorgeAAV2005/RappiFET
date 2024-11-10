@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Formulario para ingresar los datos de un nuevo producto -->
+  <ion-item>
+    <ion-label position="stacked">Nombre del Producto</ion-label>
+    <ion-input [(ngModel)]="producto_nombre" placeholder="Nombre del producto" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Cantidad</ion-label>
+    <ion-input [(ngModel)]="cantidad" type="number" placeholder="Cantidad" required min="1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Valor del Producto</ion-label>
+    <ion-input [(ngModel)]="valor_producto" type="number" placeholder="Valor" required min="0"></ion-input>
+  </ion-item>
+
+  <!-- Botón para agregar el producto al carrito -->
+  <ion-button expand="full" (click)="agregarProducto()">Agregar al carrito</ion-button>
+
+  <!-- Mostrar los productos agregados al carrito -->
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-label>
+        <h2>{{ item.producto_nombre }}</h2>
+        <p>Cantidad: {{ item.cantidad }}</p>
+        <p>Valor: ${{ item.valor_producto | number:'1.2-2' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
