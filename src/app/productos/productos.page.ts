@@ -17,6 +17,41 @@ export class ProductosPage implements OnInit {
       nombre: 'Producto 2',
       descripcion: 'Descripción del Producto 2',
     },
+    {
+      imagen: 'https://peterpan24horas.com/wp-content/uploads/2019/07/DSC_0682.jpg',
+      nombre: 'Producto 3',
+      descripcion: 'Descripción del Producto 2',
+    },
+    {
+      imagen: 'https://peterpan24horas.com/wp-content/uploads/2019/07/DSC_0682.jpg',
+      nombre: 'Producto 4',
+      descripcion: 'Descripción del Producto 2',
+    },
+    {
+      imagen: 'https://peterpan24horas.com/wp-content/uploads/2019/07/DSC_0682.jpg',
+      nombre: 'Producto 5',
+      descripcion: 'Descripción del Producto 2',
+    },
+    {
+      imagen: 'https://peterpan24horas.com/wp-content/uploads/2019/07/DSC_0682.jpg',
+      nombre: 'Producto 6',
+      descripcion: 'Descripción del Producto 2',
+    },
+    {
+      imagen: 'https://peterpan24horas.com/wp-content/uploads/2019/07/DSC_0682.jpg',
+      nombre: 'Producto 7',
+      descripcion: 'Descripción del Producto 2',
+    },
+    {
+      imagen: 'https://peterpan24horas.com/wp-content/uploads/2019/07/DSC_0682.jpg',
+      nombre: 'Producto 8',
+      descripcion: 'Descripción del Producto 2',
+    },
+    {
+      imagen: 'https://peterpan24horas.com/wp-content/uploads/2019/07/DSC_0682.jpg',
+      nombre: 'Producto 9',
+      descripcion: 'Descripción del Producto 2',
+    },
     // Agrega más productos según sea necesario
   ];
 
@@ -24,6 +59,7 @@ export class ProductosPage implements OnInit {
 
   ngOnInit() {}
 
+ 
   scrollToFeatured() {
     const featuredSection = document.getElementById('featured-products');
     if (featuredSection) {

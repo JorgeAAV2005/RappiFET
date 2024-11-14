@@ -3,16 +3,17 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { Pool } = require('pg');
 
+// Configuración de Express
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json()); // Para procesar los datos JSON
 
 // Configura la conexión a PostgreSQL
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'Registro_Ingreso',
-  password: '03273025',
+  database: 'Registro_Ingreso', // Base de datos
+  password: '12345678',
   port: 5432,
 });
 
@@ -58,6 +59,27 @@ app.post('/login', async (req, res) => {
   }
 });
 
+// Ruta para agregar un producto al carrito
+app.post('/api/carrito', async (req, res) => {
+  const { producto_nombre, cantidad, valor_producto } = req.body;
+
+  if (!producto_nombre || !cantidad || !valor_producto) {
+    return res.status(400).json({ error: 'Todos los campos son requeridos' });
+  }
+
+  try {
+    const result = await pool.query(
+      'INSERT INTO registros_carrito (producto_nombre, cantidad, valor_producto) VALUES ($1, $2, $3) RETURNING *',
+      [producto_nombre, cantidad, valor_producto]
+    );
+    res.status(201).json(result.rows[0]);
+  } catch (error) {
+    console.error('Error al agregar al carrito:', error);
+    res.status(500).json({ error: 'Error al agregar el producto al carrito' });
+  }
+});
+
+// Iniciar el servidor
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);

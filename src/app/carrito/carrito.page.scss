@@ -1,0 +1,38 @@
+ion-header {
+    --background: #ffcc00;
+    --color: white;
+  }
+  
+  ion-content {
+    --background: #f9f9f9;
+  
+    .cart-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+  
+      ion-item {
+        background-color: #fff;
+        border-radius: 10px;
+        margin: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+        ion-label {
+          font-size: 1.2rem;
+        }
+      }
+  
+      ion-button {
+        margin-top: 20px;
+        background-color: #00c853;
+        color: white;
+        font-weight: bold;
+      }
+  
+      ion-item h3 {
+        font-size: 1.5rem;
+        color: #333;
+      }
+    }
+  }
+  
