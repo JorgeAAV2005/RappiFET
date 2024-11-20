@@ -8,65 +8,79 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage {
-  nombre: string = '';
   usuario: string = '';
-  email: string = '';
   contrasena: string = '';
+  confirmarContrasena: string = '';  // Aquí declaramos la propiedad
+  rol: string = ''; 
 
   constructor(
     private navCtrl: NavController,
     private toastController: ToastController,
-    private http: HttpClient // Añadimos HttpClient
+    private http: HttpClient
   ) {}
+
   goToLogin() {
     this.navCtrl.navigateForward('/login');
   }
+
   async register() {
-    if (this.nombre && this.usuario && this.email && this.contrasena) {
-      const data = {
-        nombre: this.nombre,
-        usuario: this.usuario,
-        email: this.email,
-        contrasena: this.contrasena,
-      };
-
-      // Enviar datos al servidor
-      this.http.post('http://localhost:3000/register', data)
-        .subscribe(
-          async response => {
-            console.log('Usuario registrado:', response);
-            
-            // Mostrar mensaje de éxito
-            const toast = await this.toastController.create({
-              message: 'Registro exitoso',
-              duration: 2000,
-              color: 'success'
-            });
-            toast.present();
-
-            // Navegar a otra página o reiniciar el formulario
-            this.navCtrl.navigateRoot('/inicio');
-          },
-          async error => {
-            console.error('Error al registrar:', error);
-            
-            // Mostrar mensaje de error
-            const toast = await this.toastController.create({
-              message: 'Error al registrar. Intente nuevamente.',
-              duration: 2000,
-              color: 'danger'
-            });
-            toast.present();
-          }
-        );
-    } else {
-      // Mostrar un mensaje de error si falta algún campo
+    // Validación de la contraseña mínima de 8 caracteres
+    if (this.contrasena.length < 8) {
       const toast = await this.toastController.create({
-        message: 'Por favor, complete todos los campos',
+        message: 'La contraseña debe tener al menos 8 caracteres.',
         duration: 2000,
         color: 'danger'
       });
       toast.present();
+      return;
     }
+
+    // Validación de contraseñas coincidentes
+    if (this.contrasena !== this.confirmarContrasena) {
+      const toast = await this.toastController.create({
+        message: 'Las contraseñas no coinciden.',
+        duration: 2000,
+        color: 'danger'
+      });
+      toast.present();
+      return;
+    }
+
+    // Crear el objeto de datos para enviar al servidor
+    const data = {
+      usuario: this.usuario,
+      contrasena: this.contrasena,
+      rol: this.rol
+    };
+
+    // Enviar datos al servidor
+    this.http.post('http://localhost:3000/register', data)
+      .subscribe(
+        async response => {
+          console.log('Usuario registrado:', response);
+
+          // Mostrar mensaje de éxito
+          const toast = await this.toastController.create({
+            message: 'Registro exitoso',
+            duration: 2000,
+            color: 'success'
+          });
+          toast.present();
+
+          // Redirigir a la página de login
+          this.navCtrl.navigateForward('/login');
+        },
+        async error => {
+          console.error('Error al registrar:', error);
+
+          // Mostrar mensaje de error
+          const toast = await this.toastController.create({
+            message: 'Error al registrar. Intente nuevamente.',
+            duration: 2000,
+            color: 'danger'
+          });
+          toast.present();
+        }
+      );
   }
 }

@@ -1,48 +1,39 @@
-<ion-header>
-  <ion-toolbar class="toolbar">
-    <ion-buttons slot="start" class="back">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="login-container">
 
-<ion-content class="ion-padding">
   <div class="image-container">
-    <img src="assets/fondo.png" alt="LOGO">
+    <img src="/assets/nombre.png" alt="Logo">
   </div>
-  <div class="login-form">
-    <h1>Registro</h1>
-    <form (ngSubmit)="register()">
-      <div class="input-group">
-        <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>
-        </ion-item>
-      </div>
+  
+  <form (submit)="register()" class="form-container">
+    <h2 class="login-title">Crea tu cuenta</h2>
 
-      <div class="input-group">
-        <ion-item>
-          <ion-label position="floating">Usuario</ion-label>
-          <ion-input type="text" [(ngModel)]="usuario" name="usuario" required></ion-input>
-        </ion-item>
-      </div>
+    <ion-item class="input-item">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-input name="usuario" [(ngModel)]="usuario" placeholder="Usuario" required></ion-input>
+    </ion-item>
 
-      <div class="input-group">
-        <ion-item>
-          <ion-label position="floating">Correo electrónico</ion-label>
-          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
-        </ion-item>
-      </div>
+    <ion-item class="input-item">
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      <ion-select name="rol" [(ngModel)]="rol" placeholder="Rol" required>
+        <ion-select-option value="admin">Admin</ion-select-option>
+        <ion-select-option value="usuario">Usuario</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-      <div class="input-group">
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required></ion-input>
-        </ion-item>
-      </div>
+    <ion-item class="input-item">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input name="contrasena" [(ngModel)]="contrasena" placeholder="Contraseña" type="password" required></ion-input>
+    </ion-item>
 
-      <ion-button expand="block" type="submit" class="login-button">Registrarse</ion-button>
-      <ion-button expand="block" type="button" (click)="goToLogin()" class="login-button">Iniciar sesión</ion-button>
-    </form>
-  </div>
+    <ion-item class="input-item">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input name="confirmarContrasena" [(ngModel)]="confirmarContrasena" placeholder="Confirmar Contraseña" type="password" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" shape="round" class="login-button" type="submit">Registrarse</ion-button>
+
+    <ion-text class="forgot-password">
+      ¿Ya tienes cuenta? <a href="/login">Inicia sesión</a>
+    </ion-text>
+  </form>
 </ion-content>
